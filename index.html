@@ -3,852 +3,668 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Análisis crítico de privacidad y seguridad de Abacus.AI — Junio 2026" />
-  <title>Abacus.AI · Análisis de Privacidad &amp; Seguridad</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <!-- Favicon inline SVG -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%23080c10' width='32' height='32' rx='4'/><text y='22' x='4' font-size='18'>🔴</text></svg>" />
+  <title>Análisis Abacus.AI — Mente Tecno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════
-     HEADER
-════════════════════════════════════════════════════════ -->
-<header class="site-header">
-  <div class="container">
+  <!-- Background canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Header -->
+  <header class="site-header">
     <div class="header-inner">
-
-      <a class="header-brand" href="#">
-        <div class="brand-icon">🔍</div>
-        <span class="brand-name">INFOSEC<span>/</span>REPORT</span>
-      </a>
-
-      <nav class="tab-nav" role="tablist" aria-label="Secciones del reporte">
-        <button class="tab-btn" data-tab="page-privacy"  role="tab">Privacidad</button>
-        <button class="tab-btn" data-tab="page-security" role="tab">Seguridad</button>
-        <button class="tab-btn" data-tab="page-summary"  role="tab">Resumen</button>
-      </nav>
-
-      <div class="header-meta">
-        <span class="risk-badge">
-          <span class="pulse"></span>
-          Riesgo Alto
-        </span>
-        <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--text-muted)" id="terminal-clock"></span>
-      </div>
-
-    </div>
-  </div>
-</header>
-
-<!-- ═══════════════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════════════════ -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-eyebrow">Análisis Crítico · Junio 2026</div>
-    <h1>Política de Privacidad &amp; Seguridad de <span class="target">Abacus.AI</span></h1>
-    <p class="hero-subtitle">
-      Evaluación independiente de cláusulas problemáticas, brechas de cumplimiento GDPR,
-      y gaps de seguridad enterprise identificados en la política vigente.
-    </p>
-
-    <div class="hero-stats">
-      <div class="stat-chip red">
-        <div>
-          <div class="stat-val" data-count="13">0</div>
-          <div class="stat-lbl">Problemas Privacy</div>
+      <div class="brand">
+        <div class="brand-logo">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17" stroke="url(#grad1)" stroke-width="2"/>
+            <circle cx="18" cy="18" r="5" fill="url(#grad1)"/>
+            <line x1="18" y1="1" x2="18" y2="9" stroke="url(#grad1)" stroke-width="1.5"/>
+            <line x1="18" y1="27" x2="18" y2="35" stroke="url(#grad1)" stroke-width="1.5"/>
+            <line x1="1" y1="18" x2="9" y2="18" stroke="url(#grad1)" stroke-width="1.5"/>
+            <line x1="27" y1="18" x2="35" y2="18" stroke="url(#grad1)" stroke-width="1.5"/>
+            <line x1="5.5" y1="5.5" x2="11" y2="11" stroke="url(#grad1)" stroke-width="1.5"/>
+            <line x1="25" y1="25" x2="30.5" y2="30.5" stroke="url(#grad1)" stroke-width="1.5"/>
+            <line x1="30.5" y1="5.5" x2="25" y2="11" stroke="url(#grad1)" stroke-width="1.5"/>
+            <line x1="11" y1="25" x2="5.5" y2="30.5" stroke="url(#grad1)" stroke-width="1.5"/>
+            <defs>
+              <linearGradient id="grad1" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7B5EEA"/>
+                <stop offset="1" stop-color="#00C2FF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Mente Tecno</span>
+          <span class="brand-tagline">Análisis de Seguridad & Privacidad</span>
         </div>
       </div>
-      <div class="stat-chip amber">
-        <div>
-          <div class="stat-val" data-count="10">0</div>
-          <div class="stat-lbl">Gaps Seguridad</div>
-        </div>
-      </div>
-      <div class="stat-chip cyan">
-        <div>
-          <div class="stat-val" data-count="0">0</div>
-          <div class="stat-lbl">SOC 2 Verificado</div>
-        </div>
-      </div>
-      <div class="stat-chip" style="border-color:var(--border-medium)">
-        <div>
-          <div class="stat-val" style="color:var(--text-secondary);font-size:0.85rem">Jun 2026</div>
-          <div class="stat-lbl">Política analizada</div>
-        </div>
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        <span>Jun 2026</span>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ═══════════════════════════════════════════════════════
-     PAGE: PRIVACIDAD
-════════════════════════════════════════════════════════ -->
-<main>
-
-<section class="page" id="page-privacy">
-  <div class="container">
-
-    <div class="section-header">
-      <div>
-        <h2>Problemas de Privacidad</h2>
-        <p style="margin-top:0.3rem;font-size:0.85rem">13 hallazgos críticos en la política de privacidad vigente</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-pill">
+        <span class="pill-icon">⚠️</span>
+        Reporte Crítico de Evaluación
       </div>
-      <span class="severity-tag high">🔴 Riesgo Alto</span>
-    </div>
-
-    <div class="issues-grid">
-
-      <!-- ISSUE 1 -->
-      <article class="issue-card severity-high">
-        <div class="issue-header">
-          <span class="issue-num">01</span>
-          <span class="issue-icon">📡</span>
-          <span class="issue-title">Recolección extensiva de datos no esencial</span>
-          <span class="severity-tag high">Alto</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Problema</h4>
-          <p>Recolección automática de datos de ubicación vía dirección IP. Mantienen logs completos de hora/fecha de acceso, información del dispositivo, datos demográficos (edad, género, código postal) e histórico de uso.</p>
-          <h4>Impacto</h4>
-          <div class="impact-tag">⚠ Se recopilan datos más allá de lo necesario para el servicio</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 2 -->
-      <article class="issue-card severity-medium">
-        <div class="issue-header">
-          <span class="issue-num">02</span>
-          <span class="issue-icon">🍪</span>
-          <span class="issue-title">Cookies sin control granular</span>
-          <span class="severity-tag medium">Medio</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Problema</h4>
-          <p>Utilizan cookies para "recopilar, almacenar y rastrear información" sin ofrecer opción clara para rechazar cookies no esenciales. No explican qué datos se comparten internamente.</p>
-          <h4>Impacto</h4>
-          <div class="impact-tag">⚠ Vigilancia pasiva del usuario sin control real</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 3 -->
-      <article class="issue-card severity-high">
-        <div class="issue-header">
-          <span class="issue-num">03</span>
-          <span class="issue-icon">♾️</span>
-          <span class="issue-title">Retención indefinida tras cancelación</span>
-          <span class="severity-tag high">Alto</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Cláusula 4.4</h4>
-          <div class="clause-quote">"Following termination or deactivation of your account, Abacus.AI may retain information (including your profile information) and user Content for a commercially reasonable time for backup, archival, and/or audit purposes."</div>
-          <h4>Análisis</h4>
-          <p>"Commercially reasonable time" = indefinido sin límite específico. Tus datos pueden quedar almacenados sin garantía de eliminación incluso solicitando el derecho al olvido.</p>
-          <div class="impact-tag">⚠ Pérdida de control sobre datos después de dejar la plataforma</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 4 -->
-      <article class="issue-card severity-high">
-        <div class="issue-header">
-          <span class="issue-num">04</span>
-          <span class="issue-icon">🔗</span>
-          <span class="issue-title">Compartir datos con terceros sin restricción clara</span>
-          <span class="severity-tag high">Alto</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Problema</h4>
-          <p>Comparten información con "service providers" de manera no transparente: procesamiento de pagos, marketing, publicidad de terceros, encuestas.</p>
-          <div class="clause-quote">"Third parties will only have access to your information as reasonably necessary"</div>
-          <p>El término "reasonably" es subjetivo y no está definido contractualmente.</p>
-          <div class="impact-tag">⚠ Datos distribuidos a múltiples empresas sin consentimiento explícito</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 5 -->
-      <article class="issue-card severity-high">
-        <div class="issue-header">
-          <span class="issue-num">05</span>
-          <span class="issue-icon">🤖</span>
-          <span class="issue-title">Escaneo automatizado de contenido</span>
-          <span class="severity-tag high">Alto</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Cláusula de Seguridad</h4>
-          <div class="clause-quote">"We may use tools to scan your videos and other content in the Services for content that violates our Terms of Service or the law."</div>
-          <h4>Implicaciones</h4>
-          <p>Análisis automático de TODO el contenido sin notificación previa. Pueden usar IA para revisar datos. Justificación vaga: "violaciones de TOS" que pueden cambiar unilateralmente.</p>
-          <div class="impact-tag">⚠ Vigilancia de contenido sin consentimiento informado</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 6 -->
-      <article class="issue-card severity-medium">
-        <div class="issue-header">
-          <span class="issue-num">06</span>
-          <span class="issue-icon">📊</span>
-          <span class="issue-title">Uso vago de datos para "mejora del servicio"</span>
-          <span class="severity-tag medium">Medio</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Contexto</h4>
-          <p>Afirman no usar datos para entrenar modelos generalizados. Sin embargo, usan "información de uso limitada, logs de actividad, reportes de error" para "identificar y resolver problemas técnicos". La definición de "mejora" es vaga y podría expandirse.</p>
-          <div class="impact-tag">⚠ Análisis profundo del comportamiento sin beneficio claro para el usuario</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 7 -->
-      <article class="issue-card severity-high">
-        <div class="issue-header">
-          <span class="issue-num">07</span>
-          <span class="issue-icon">⚖️</span>
-          <span class="issue-title">Divulgación legal sin notificación previa</span>
-          <span class="severity-tag high">Alto</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Cláusula 3.3</h4>
-          <p>Pueden divulgar datos sin orden judicial en ciertos casos, sin notificarte antes. El concepto de "emergencias públicas" es elástico y subjetivo.</p>
-          <div class="impact-tag">⚠ Datos entregados a autoridades sin conocimiento del usuario</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 8 -->
-      <article class="issue-card severity-high">
-        <div class="issue-header">
-          <span class="issue-num">08</span>
-          <span class="issue-icon">🔓</span>
-          <span class="issue-title">Seguridad no garantizada — exención de responsabilidad</span>
-          <span class="severity-tag high">Alto</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Cláusula</h4>
-          <div class="clause-quote">"Please understand, however, that while we try our best to safeguard your Personal Information once we receive it, no transmission of data over the Internet can be guaranteed to be 100% secure."</div>
-          <h4>Análisis</h4>
-          <p>Exención total de responsabilidad. Si hay un breach, no existe protección contractual. Asumen cero responsabilidad por pérdida de datos.</p>
-          <div class="impact-tag">⚠ Datos "a riesgo" sin recourse legal para el usuario</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 9 -->
-      <article class="issue-card severity-high">
-        <div class="issue-header">
-          <span class="issue-num">09</span>
-          <span class="issue-icon">🇪🇺</span>
-          <span class="issue-title">Privacy Shield inválido — riesgo GDPR</span>
-          <span class="severity-tag high">Alto</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Problema Legal</h4>
-          <p>Mencionan "Privacy Shield" invalidado desde 2020 por el TJUE (Schrems II). La política no menciona alternativas como Cláusulas Contractuales Estándar (SCCs).</p>
-          <div class="impact-tag">⚠ Ilegalidad GDPR potencial en transferencias de datos a EE.UU.</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 10 -->
-      <article class="issue-card severity-medium">
-        <div class="issue-header">
-          <span class="issue-num">10</span>
-          <span class="issue-icon">📋</span>
-          <span class="issue-title">Derechos GDPR limitados en práctica</span>
-          <span class="severity-tag medium">Medio</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Problema</h4>
-          <p>Los derechos GDPR listados incluyen comodines: "Subject to the GDPR and applicable law's limitations". Sin timeframe de respuesta definido para acceso, y la portabilidad no especifica formato.</p>
-          <div class="impact-tag">⚠ Derechos sobre el papel, débiles en ejecución</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 11 -->
-      <article class="issue-card severity-medium">
-        <div class="issue-header">
-          <span class="issue-num">11</span>
-          <span class="issue-icon">👶</span>
-          <span class="issue-title">Menores sin protección real</span>
-          <span class="severity-tag medium">Medio</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Cláusula 5.1</h4>
-          <p>Dicen no estar "dirigidos a menores" pero sin COPPA compliance clara. Permiten uso con "supervisión de padres" sin verificación. Edad mínima 16 años (GDPR) sin mecanismo de verificación real.</p>
-          <div class="impact-tag">⚠ Menores pueden ser perfilados sin consentimiento parental verificable</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 12 -->
-      <article class="issue-card severity-high">
-        <div class="issue-header">
-          <span class="issue-num">12</span>
-          <span class="issue-icon">✏️</span>
-          <span class="issue-title">Cambios unilaterales de política</span>
-          <span class="severity-tag high">Alto</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Problema</h4>
-          <p>No especifican cómo notificarán cambios de política. Podrían modificar usos de datos sin aprobación del usuario. El patrón "continuación de uso = consentimiento" es abusivo.</p>
-          <div class="impact-tag">⚠ La política actual podría cambiar sin consentimiento activo</div>
-        </div>
-      </article>
-
-      <!-- ISSUE 13 -->
-      <article class="issue-card severity-medium">
-        <div class="issue-header">
-          <span class="issue-num">13</span>
-          <span class="issue-icon">📧</span>
-          <span class="issue-title">Contacto de privacidad deficiente</span>
-          <span class="severity-tag medium">Medio</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="issue-body">
-          <h4>Problema</h4>
-          <p>Solo email: privacy@abacus.ai. EU Representative en Grecia con tiempo de respuesta incierto. Sin teléfono, chat, ni DPO (Data Protection Officer) listado. "Allow a reasonable amount of time" — indefinido.</p>
-          <div class="impact-tag">⚠ Difícil hacer valer derechos en la práctica</div>
-        </div>
-      </article>
-
-    </div><!-- /issues-grid -->
-
-    <!-- Comparison Table -->
-    <div class="section-header" style="margin-top:3rem">
-      <h2>Comparativa: Lo que Falta</h2>
-    </div>
-
-    <div class="comparison-table-wrap">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Protección</th>
-            <th>Abacus.AI</th>
-            <th>Estándar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Límite de retención específico</td>
-            <td><span class="check-fail">✗</span> &nbsp;"commercially reasonable"</td>
-            <td><span class="check-pass">✓</span> &nbsp;30–90 días</td>
-          </tr>
-          <tr>
-            <td>Opt-in vs Opt-out</td>
-            <td><span class="check-fail">✗</span> &nbsp;Opt-out implícito</td>
-            <td><span class="check-pass">✓</span> &nbsp;Opt-in explícito</td>
-          </tr>
-          <tr>
-            <td>Cifrado end-to-end</td>
-            <td><span class="check-fail">✗</span> &nbsp;Menciona pero no garantiza</td>
-            <td><span class="check-pass">✓</span> &nbsp;Garantizado</td>
-          </tr>
-          <tr>
-            <td>Auditoría externa independiente</td>
-            <td><span class="check-fail">✗</span> &nbsp;No mencionada</td>
-            <td><span class="check-pass">✓</span> &nbsp;SOC 2 Type II</td>
-          </tr>
-          <tr>
-            <td>DPO (Data Protection Officer)</td>
-            <td><span class="check-fail">✗</span> &nbsp;No listado</td>
-            <td><span class="check-pass">✓</span> &nbsp;Contacto directo</td>
-          </tr>
-          <tr>
-            <td>Breach notification</td>
-            <td><span class="check-fail">✗</span> &nbsp;No especificado</td>
-            <td><span class="check-pass">✓</span> &nbsp;&lt;72 horas</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Recomendaciones Privacidad -->
-    <div class="section-header" style="margin-top:2.5rem">
-      <h2>Recomendaciones</h2>
-    </div>
-
-    <div class="recs-grid">
-      <div class="rec-card">
-        <div class="rec-card-header">
-          <span class="rec-icon">⚡</span>
-          <h3>Acciones Inmediatas</h3>
-        </div>
-        <ul class="rec-list">
-          <li>No subas datos sensibles (financieros, médicos, IDs)</li>
-          <li>No conectes Google Workspace con archivos confidenciales</li>
-          <li>Lee los TOS completos — la privacidad no es todo</li>
-          <li>Documenta tu consentimiento — guarda emails de aceptación</li>
-        </ul>
-      </div>
-      <div class="rec-card">
-        <div class="rec-card-header">
-          <span class="rec-icon">🗓</span>
-          <h3>A Largo Plazo</h3>
-        </div>
-        <ul class="rec-list">
-          <li>Solicita portabilidad de datos cada 6 meses</li>
-          <li>Usa contraseña única (nunca reutilices passwords)</li>
-          <li>Considera alternativas con políticas más claras</li>
-          <li>Si sos EU/EEA, consultá con un abogado GDPR antes de usar</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="verdict-block">
-      <p><strong>Veredicto:</strong> Adecuado para datos no sensibles. <strong>Riesgoso</strong> para información personal, financiera o profesional crítica. Abacus.AI retiene poder excesivo sobre tus datos con retención indefinida, compartir con terceros opaco y garantías de seguridad débiles.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
-     PAGE: SEGURIDAD
-════════════════════════════════════════════════════════ -->
-<section class="page" id="page-security">
-  <div class="container">
-
-    <div class="section-header">
-      <div>
-        <h2>Análisis de Seguridad Enterprise</h2>
-        <p style="margin-top:0.3rem;font-size:0.85rem">10 gaps críticos vs. estándar enterprise</p>
-      </div>
-      <span class="severity-tag high">🔴 Sub-estándar</span>
-    </div>
-
-    <div class="security-grid">
-
-      <div class="sec-metric">
-        <div class="sec-metric-top">
-          <span class="sec-metric-name">Customer-supplied keys</span>
-          <span class="metric-status fail">FAIL</span>
-        </div>
-        <div class="sec-metric-label">Abacus.AI</div>
-        <div class="sec-metric-abacus">✗ Imposible</div>
-        <div class="sec-metric-label">Estándar Enterprise</div>
-        <div class="sec-metric-standard">✓ Soportado</div>
-      </div>
-
-      <div class="sec-metric">
-        <div class="sec-metric-top">
-          <span class="sec-metric-name">TLS por defecto</span>
-          <span class="metric-status warn">WARN</span>
-        </div>
-        <div class="sec-metric-label">Abacus.AI</div>
-        <div class="sec-metric-abacus">≈ TLS 1.2+</div>
-        <div class="sec-metric-label">Estándar Enterprise</div>
-        <div class="sec-metric-standard">✓ TLS 1.3</div>
-      </div>
-
-      <div class="sec-metric">
-        <div class="sec-metric-top">
-          <span class="sec-metric-name">Key rotation schedule</span>
-          <span class="metric-status fail">FAIL</span>
-        </div>
-        <div class="sec-metric-label">Abacus.AI</div>
-        <div class="sec-metric-abacus">✗ Vago ("sensitivity-based")</div>
-        <div class="sec-metric-label">Estándar Enterprise</div>
-        <div class="sec-metric-standard">✓ Cada 90 días</div>
-      </div>
-
-      <div class="sec-metric">
-        <div class="sec-metric-top">
-          <span class="sec-metric-name">Penetration testing</span>
-          <span class="metric-status fail">FAIL</span>
-        </div>
-        <div class="sec-metric-label">Abacus.AI</div>
-        <div class="sec-metric-abacus">✗ "Periodic" (sin fecha)</div>
-        <div class="sec-metric-label">Estándar Enterprise</div>
-        <div class="sec-metric-standard">✓ Trimestral</div>
-      </div>
-
-      <div class="sec-metric">
-        <div class="sec-metric-top">
-          <span class="sec-metric-name">SOC 2 Type II</span>
-          <span class="metric-status warn">WARN</span>
-        </div>
-        <div class="sec-metric-label">Abacus.AI</div>
-        <div class="sec-metric-abacus">≈ Mencionado, sin detalles</div>
-        <div class="sec-metric-label">Estándar Enterprise</div>
-        <div class="sec-metric-standard">✓ Verificable</div>
-      </div>
-
-      <div class="sec-metric">
-        <div class="sec-metric-top">
-          <span class="sec-metric-name">Aislamiento físico</span>
-          <span class="metric-status fail">FAIL</span>
-        </div>
-        <div class="sec-metric-label">Abacus.AI</div>
-        <div class="sec-metric-abacus">✗ Solo lógico</div>
-        <div class="sec-metric-label">Estándar Enterprise</div>
-        <div class="sec-metric-standard">✓ Físico por defecto</div>
-      </div>
-
-      <div class="sec-metric">
-        <div class="sec-metric-top">
-          <span class="sec-metric-name">JITA session timeout</span>
-          <span class="metric-status fail">FAIL</span>
-        </div>
-        <div class="sec-metric-label">Abacus.AI</div>
-        <div class="sec-metric-abacus">✗ No especificado</div>
-        <div class="sec-metric-label">Estándar Enterprise</div>
-        <div class="sec-metric-standard">✓ &lt; 1 hora</div>
-      </div>
-
-      <div class="sec-metric">
-        <div class="sec-metric-top">
-          <span class="sec-metric-name">RPO/RTO documentado</span>
-          <span class="metric-status fail">FAIL</span>
-        </div>
-        <div class="sec-metric-label">Abacus.AI</div>
-        <div class="sec-metric-abacus">✗ No documentado</div>
-        <div class="sec-metric-label">Estándar Enterprise</div>
-        <div class="sec-metric-standard">✓ &lt; 1 hora RPO</div>
-      </div>
-
-      <div class="sec-metric">
-        <div class="sec-metric-top">
-          <span class="sec-metric-name">DPO SLA de respuesta</span>
-          <span class="metric-status fail">FAIL</span>
-        </div>
-        <div class="sec-metric-label">Abacus.AI</div>
-        <div class="sec-metric-abacus">✗ Sin SLA definido</div>
-        <div class="sec-metric-label">Estándar Enterprise</div>
-        <div class="sec-metric-standard">✓ 24–48 horas</div>
-      </div>
-
-      <div class="sec-metric">
-        <div class="sec-metric-top">
-          <span class="sec-metric-name">Backup retention limit</span>
-          <span class="metric-status fail">FAIL</span>
-        </div>
-        <div class="sec-metric-label">Abacus.AI</div>
-        <div class="sec-metric-abacus">✗ Indefinido (excepto 7 días)</div>
-        <div class="sec-metric-label">Estándar Enterprise</div>
-        <div class="sec-metric-standard">✓ 30–90 días</div>
-      </div>
-
-    </div><!-- /security-grid -->
-
-    <!-- Tabla comparativa seguridad -->
-    <div class="section-header" style="margin-top:2.5rem">
-      <h2>Gaps vs. Estándar Enterprise</h2>
-    </div>
-
-    <div class="comparison-table-wrap">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Práctica</th>
-            <th>Abacus.AI</th>
-            <th>Estándar Enterprise</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Customer-supplied keys</td>
-            <td><span class="check-fail">✗</span>&nbsp; Imposible</td>
-            <td><span class="check-pass">✓</span>&nbsp; Soportado</td>
-          </tr>
-          <tr>
-            <td>TLS 1.3 por defecto</td>
-            <td><span class="check-fail">✗</span>&nbsp; TLS 1.2+</td>
-            <td><span class="check-pass">✓</span>&nbsp; TLS 1.3</td>
-          </tr>
-          <tr>
-            <td>Key rotation schedule</td>
-            <td><span class="check-fail">✗</span>&nbsp; Vago ("sensitivity-based")</td>
-            <td><span class="check-pass">✓</span>&nbsp; Cada 90 días</td>
-          </tr>
-          <tr>
-            <td>Penetration testing frequency</td>
-            <td><span class="check-fail">✗</span>&nbsp; "Periodic"</td>
-            <td><span class="check-pass">✓</span>&nbsp; Trimestral</td>
-          </tr>
-          <tr>
-            <td>SOC 2 Type II</td>
-            <td><span class="check-fail">✗</span>&nbsp; Sin detalles</td>
-            <td><span class="check-pass">✓</span>&nbsp; Verificable</td>
-          </tr>
-          <tr>
-            <td>Aislamiento físico por defecto</td>
-            <td><span class="check-fail">✗</span>&nbsp; Solo lógico</td>
-            <td><span class="check-pass">✓</span>&nbsp; Físico</td>
-          </tr>
-          <tr>
-            <td>JITA session timeout</td>
-            <td><span class="check-fail">✗</span>&nbsp; No especificado</td>
-            <td><span class="check-pass">✓</span>&nbsp; &lt; 1 hora</td>
-          </tr>
-          <tr>
-            <td>RPO/RTO documentado</td>
-            <td><span class="check-fail">✗</span>&nbsp; No</td>
-            <td><span class="check-pass">✓</span>&nbsp; &lt; 1 hora RPO</td>
-          </tr>
-          <tr>
-            <td>DPO SLA de respuesta</td>
-            <td><span class="check-fail">✗</span>&nbsp; No</td>
-            <td><span class="check-pass">✓</span>&nbsp; 24–48 horas</td>
-          </tr>
-          <tr>
-            <td>Backup retention limit</td>
-            <td><span class="check-fail">✗</span>&nbsp; Indefinido (excepto 7 días)</td>
-            <td><span class="check-pass">✓</span>&nbsp; 30–90 días</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Recomendaciones seguridad -->
-    <div class="section-header" style="margin-top:2.5rem">
-      <h2>Recomendaciones de Seguridad</h2>
-    </div>
-
-    <div class="recs-grid">
-      <div class="rec-card">
-        <div class="rec-card-header">
-          <span class="rec-icon">🔎</span>
-          <h3>Antes de Usar Abacus.AI</h3>
-        </div>
-        <ul class="rec-list">
-          <li>Solicitá frecuencia exacta de penetration testing</li>
-          <li>Pedí fecha y scope de última auditoría SOC 2</li>
-          <li>Exigí RPO y RTO documentados</li>
-          <li>Verificá el SLA del DPO</li>
-        </ul>
-      </div>
-      <div class="rec-card">
-        <div class="rec-card-header">
-          <span class="rec-icon">📝</span>
-          <h3>Negociá Términos Adicionales</h3>
-        </div>
-        <ul class="rec-list">
-          <li>Aislamiento físico de datos (si es enterprise)</li>
-          <li>Customer-supplied keys (si es crítico)</li>
-          <li>Cláusula de notificación de breach &lt; 72h</li>
-        </ul>
-      </div>
-      <div class="rec-card">
-        <div class="rec-card-header">
-          <span class="rec-icon">🛡</span>
-          <h3>Controles Adicionales Propios</h3>
-        </div>
-        <ul class="rec-list">
-          <li>Encriptación local antes de enviar datos</li>
-          <li>Enmascaramiento de PII antes de almacenar</li>
-          <li>Auditoría independiente de acceso de empleados</li>
-        </ul>
-      </div>
-      <div class="rec-card">
-        <div class="rec-card-header">
-          <span class="rec-icon">📡</span>
-          <h3>Monitoreo Continuo</h3>
-        </div>
-        <ul class="rec-list">
-          <li>Acceso a tu cuenta (logs de login)</li>
-          <li>Cambios en políticas de seguridad</li>
-          <li>Notificaciones de vulnerabilidades</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
-     PAGE: RESUMEN
-════════════════════════════════════════════════════════ -->
-<section class="page" id="page-summary">
-  <div class="container">
-
-    <div class="section-header">
-      <div>
-        <h2>Resumen Ejecutivo</h2>
-        <p style="margin-top:0.3rem;font-size:0.85rem">Evaluación global — Análisis de Privacidad &amp; Seguridad</p>
-      </div>
-      <span class="severity-tag high">🔴 Riesgo Alto</span>
-    </div>
-
-    <!-- Risk score -->
-    <div class="risk-score-block">
-      <div>
-        <div class="risk-score-num">🔴</div>
-        <div class="risk-score-label">Nivel de Riesgo</div>
-      </div>
-      <div class="risk-score-desc">
-        <h3 style="margin-bottom:0.4rem;color:var(--red-glow)">ALTO</h3>
-        <p>Abacus.AI retiene poder excesivo sobre los datos del usuario con retención indefinida, compartir con terceros opaco, garantías de seguridad débiles y derechos GDPR limitados en práctica.</p>
-      </div>
-    </div>
-
-    <!-- Score bars por categoría -->
-    <div style="display:grid;gap:0.75rem;margin-bottom:2rem">
-
-      <div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem">
-          <span style="font-size:0.82rem;color:var(--text-secondary)">Transparencia de datos</span>
-          <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--red-glow)">20%</span>
-        </div>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar red" data-width="20"></div>
-        </div>
-      </div>
-
-      <div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem">
-          <span style="font-size:0.82rem;color:var(--text-secondary)">Control del usuario</span>
-          <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--red-glow)">25%</span>
-        </div>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar red" data-width="25"></div>
-        </div>
-      </div>
-
-      <div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem">
-          <span style="font-size:0.82rem;color:var(--text-secondary)">Cumplimiento GDPR</span>
-          <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--amber-glow)">40%</span>
-        </div>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar amber" data-width="40"></div>
-        </div>
-      </div>
-
-      <div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem">
-          <span style="font-size:0.82rem;color:var(--text-secondary)">Seguridad técnica</span>
-          <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--red-glow)">30%</span>
-        </div>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar red" data-width="30"></div>
-        </div>
-      </div>
-
-      <div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem">
-          <span style="font-size:0.82rem;color:var(--text-secondary)">Respuesta a incidentes</span>
-          <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--red-glow)">15%</span>
-        </div>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar red" data-width="15"></div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Hallazgos clave -->
-    <div class="section-header">
-      <h2>Hallazgos Clave</h2>
-    </div>
-
-    <div class="recs-grid">
-      <div class="rec-card" style="border-color:var(--red-border)">
-        <div class="rec-card-header">
-          <span class="rec-icon">🚨</span>
-          <h3>Privacidad — 13 problemas</h3>
-        </div>
-        <ul class="rec-list">
-          <li>Retención indefinida de datos post-cancelación</li>
-          <li>Compartir con terceros sin restricción clara</li>
-          <li>Privacy Shield inválido (Schrems II 2020)</li>
-          <li>Cambios unilaterales de política sin notificación</li>
-          <li>Escaneo automatizado de todo el contenido</li>
-        </ul>
-      </div>
-      <div class="rec-card" style="border-color:var(--amber-border)">
-        <div class="rec-card-header">
-          <span class="rec-icon">⚠️</span>
-          <h3>Seguridad — 10 gaps</h3>
-        </div>
-        <ul class="rec-list">
-          <li>Sin customer-supplied keys</li>
-          <li>TLS 1.2 en lugar de TLS 1.3</li>
-          <li>Key rotation sin frecuencia definida</li>
-          <li>Pen testing solo "periódico"</li>
-          <li>Sin RPO/RTO documentado</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Uso adecuado vs no -->
-    <div class="section-header" style="margin-top:2.5rem">
-      <h2>¿Cuándo usarlo?</h2>
-    </div>
-
-    <div class="recs-grid">
-      <div class="rec-card" style="border-color:var(--green-border)">
-        <div class="rec-card-header">
-          <span class="rec-icon">✅</span>
-          <h3>Adecuado para</h3>
-        </div>
-        <ul class="rec-list">
-          <li>Datos no sensibles en entornos de prueba</li>
-          <li>Desarrollo y experimentación con IA</li>
-          <li>Proyectos sin información personal crítica</li>
-          <li>Uso con encriptación local previa</li>
-        </ul>
-      </div>
-      <div class="rec-card" style="border-color:var(--red-border)">
-        <div class="rec-card-header">
-          <span class="rec-icon">🚫</span>
-          <h3>Evitar para</h3>
-        </div>
-        <ul class="rec-list">
-          <li>Datos financieros o bancarios</li>
-          <li>Información médica o de salud</li>
-          <li>Documentos legales confidenciales</li>
-          <li>PII de clientes o empleados</li>
-          <li>Usuarios en EU/EEA sin consulta legal</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="verdict-block" style="margin-top:2rem">
-      <p>
-        <strong>Conclusión:</strong> Abacus.AI es una plataforma funcional para uso con datos no sensibles.
-        Para entornos enterprise, gubernamentales o con datos regulados, los gaps de privacidad y seguridad
-        identificados representan un <strong>riesgo no aceptable</strong> sin negociación contractual adicional
-        y controles técnicos propios.
+      <h1 class="hero-title">
+        Abacus.AI
+        <span class="gradient-text">Auditoría de Seguridad<br/>& Privacidad</span>
+      </h1>
+      <p class="hero-subtitle">
+        Análisis exhaustivo de las políticas de seguridad y privacidad de Abacus.AI,
+        identificando brechas críticas frente a estándares enterprise.
       </p>
-    </div>
-
-    <p class="disclaimer" style="margin-top:1.5rem">
-      Análisis basado en Privacy Policy y Security Policy de Abacus.AI consultadas en junio 2026.
-      Para decisiones legales vinculantes, consultá con un abogado especializado en privacidad de datos.
-    </p>
-
-  </div>
-</section>
-
-</main>
-
-<!-- ═══════════════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════════════ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-text">
-        <div style="margin-bottom:0.2rem">
-          <span style="color:var(--text-primary);font-weight:500">INFOSEC/REPORT</span>
-          &nbsp;·&nbsp; Análisis Independiente
+      <div class="hero-risk">
+        <div class="risk-card risk-high">
+          <div class="risk-icon">🔴</div>
+          <div>
+            <div class="risk-label">Nivel de Riesgo</div>
+            <div class="risk-value">ALTO</div>
+          </div>
         </div>
-        <div>Abacus.AI Privacy &amp; Security · Junio 2026</div>
-      </div>
-      <div class="disclaimer">
-        Este reporte es de carácter informativo y educativo. No constituye asesoramiento legal.
-        Consultá a un profesional para decisiones vinculantes.
+        <div class="risk-card risk-warning">
+          <div class="risk-icon">🔐</div>
+          <div>
+            <div class="risk-label">Gaps de Seguridad</div>
+            <div class="risk-value">9 Críticos</div>
+          </div>
+        </div>
+        <div class="risk-card risk-warning">
+          <div class="risk-icon">📋</div>
+          <div>
+            <div class="risk-label">Problemas de Privacidad</div>
+            <div class="risk-value">13 Detectados</div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script src="js/app.js"></script>
+  <!-- Nav Tabs -->
+  <nav class="tab-nav" id="tab-nav">
+    <div class="tab-nav-inner">
+      <button class="tab-btn active" data-tab="security">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        Seguridad
+      </button>
+      <button class="tab-btn" data-tab="privacy">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Privacidad
+      </button>
+      <button class="tab-btn" data-tab="recommendations">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Recomendaciones
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- ===================== SECURITY TAB ===================== -->
+    <section class="tab-panel active" id="tab-security">
+      <div class="section-header">
+        <h2>Análisis de Seguridad</h2>
+        <p>Comparativa entre las prácticas de Abacus.AI y el estándar enterprise</p>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Gap Analysis: Abacus.AI vs. Estándar Enterprise</h3>
+          <span class="card-badge card-badge--danger">9 Brechas Críticas</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Práctica</th>
+                <th>Abacus.AI</th>
+                <th>Estándar Enterprise</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Customer-supplied keys</td>
+                <td class="status-fail">Imposible</td>
+                <td class="status-ok">Soportado</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>TLS por defecto</td>
+                <td class="status-fail">TLS 1.2+</td>
+                <td class="status-ok">TLS 1.3</td>
+                <td><span class="badge badge--warning">INFERIOR</span></td>
+              </tr>
+              <tr>
+                <td>Key rotation schedule</td>
+                <td class="status-fail">Vago ("sensitivity-based")</td>
+                <td class="status-ok">Cada 90 días</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>Penetration testing</td>
+                <td class="status-fail">"Periodic" (sin definir)</td>
+                <td class="status-ok">Trimestral</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>SOC 2 Type II</td>
+                <td class="status-fail">Mencionado sin detalles</td>
+                <td class="status-ok">Verificable</td>
+                <td><span class="badge badge--warning">DUDOSO</span></td>
+              </tr>
+              <tr>
+                <td>Aislamiento por defecto</td>
+                <td class="status-fail">Lógico</td>
+                <td class="status-ok">Físico</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>JITA session timeout</td>
+                <td class="status-fail">No especificado</td>
+                <td class="status-ok">&lt; 1 hora</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>RPO/RTO documentado</td>
+                <td class="status-fail">No documentado</td>
+                <td class="status-ok">&lt; 1 hora RPO</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>DPO SLA de respuesta</td>
+                <td class="status-fail">No especificado</td>
+                <td class="status-ok">24-48 horas</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>Backup retention limit</td>
+                <td class="status-fail">Indefinido (excepto 7 días)</td>
+                <td class="status-ok">30-90 días</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Security Score -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-ring" style="--pct:20">
+            <svg viewBox="0 0 120 120">
+              <circle class="ring-bg" cx="60" cy="60" r="50"/>
+              <circle class="ring-fill ring-fill--danger" cx="60" cy="60" r="50" style="stroke-dashoffset: calc(314 - (314 * 20) / 100)"/>
+            </svg>
+            <div class="metric-center">
+              <span class="metric-num">20%</span>
+              <span class="metric-label">Score</span>
+            </div>
+          </div>
+          <p class="metric-desc">Cumplimiento de seguridad enterprise</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-ring" style="--pct:10">
+            <svg viewBox="0 0 120 120">
+              <circle class="ring-bg" cx="60" cy="60" r="50"/>
+              <circle class="ring-fill ring-fill--danger" cx="60" cy="60" r="50" style="stroke-dashoffset: calc(314 - (314 * 10) / 100)"/>
+            </svg>
+            <div class="metric-center">
+              <span class="metric-num">1/10</span>
+              <span class="metric-label">Prácticas</span>
+            </div>
+          </div>
+          <p class="metric-desc">Prácticas enterprise implementadas correctamente</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-ring" style="--pct:0">
+            <svg viewBox="0 0 120 120">
+              <circle class="ring-bg" cx="60" cy="60" r="50"/>
+              <circle class="ring-fill ring-fill--danger" cx="60" cy="60" r="50" style="stroke-dashoffset: 314"/>
+            </svg>
+            <div class="metric-center">
+              <span class="metric-num">N/A</span>
+              <span class="metric-label">CSEK</span>
+            </div>
+          </div>
+          <p class="metric-desc">Customer-Supplied Encryption Keys: No disponible</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRIVACY TAB ===================== -->
+    <section class="tab-panel" id="tab-privacy">
+      <div class="section-header">
+        <h2>Análisis de Privacidad</h2>
+        <p>13 problemas críticos detectados en la política de privacidad de Abacus.AI (Jun 2026)</p>
+      </div>
+
+      <div class="issues-grid">
+
+        <div class="issue-card">
+          <div class="issue-number">01</div>
+          <div class="issue-severity severity--high">ALTO</div>
+          <h4>Recolección Extensiva de Datos No Esencial</h4>
+          <p>Almacenan dirección IP (revela ubicación), logs completos de acceso, información del dispositivo, datos demográficos (edad, género, código postal) e histórico de comportamiento — más de lo necesario para el servicio.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Datos recopilados más allá de lo necesario para proporcionar el servicio
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-number">02</div>
+          <div class="issue-severity severity--medium">MEDIO</div>
+          <h4>Cookies sin Control Granular</h4>
+          <p>Utilizan cookies para "recopilar, almacenar y rastrear información" sin opción clara para rechazar cookies no esenciales. No explican qué datos se comparten internamente.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Vigilancia pasiva del usuario sin control real
+          </div>
+        </div>
+
+        <div class="issue-card issue-card--critical">
+          <div class="issue-number">03</div>
+          <div class="issue-severity severity--critical">CRÍTICO</div>
+          <h4>Retención Indefinida Tras Cancelación</h4>
+          <p><strong>Cláusula 4.4:</strong> "commercially reasonable time" = sin límite específico. Tus datos pueden quedarse almacenados indefinidamente sin garantía de eliminación incluso si solicitas derecho al olvido.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Pérdida total de control sobre tus datos al dejar la plataforma
+          </div>
+        </div>
+
+        <div class="issue-card issue-card--critical">
+          <div class="issue-number">04</div>
+          <div class="issue-severity severity--critical">CRÍTICO</div>
+          <h4>Compartir Datos con Terceros sin Restricción</h4>
+          <p>Comparten información con "service providers" incluyendo: procesamiento de pagos, marketing, publicidad de terceros y encuestas. "reasonably necessary" es completamente subjetivo.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Tus datos se distribuyen a múltiples empresas sin consentimiento explícito
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-number">05</div>
+          <div class="issue-severity severity--high">ALTO</div>
+          <h4>Escaneo Automatizado de Contenido</h4>
+          <p>Analizan automáticamente TODO tu contenido sin notificación previa usando herramientas de IA, con justificación vaga de "violaciones de TOS" que pueden cambiar unilateralmente.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Vigilancia de contenido sin consentimiento informado
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-number">06</div>
+          <div class="issue-severity severity--medium">MEDIO</div>
+          <h4>Uso Vago de Datos para "Mejora del Servicio"</h4>
+          <p>Usan "información de uso limitada, logs de actividad, reportes de error" para optimización. La definición de "mejora" es vaga y podría expandirse sin notificación.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Análisis profundo de comportamiento sin beneficio directo para el usuario
+          </div>
+        </div>
+
+        <div class="issue-card issue-card--critical">
+          <div class="issue-number">07</div>
+          <div class="issue-severity severity--critical">CRÍTICO</div>
+          <h4>Disclosure Legal sin Notificación Previa</h4>
+          <p><strong>Cláusula 3.3:</strong> Pueden divulgar datos sin orden judicial en ciertos casos, sin notificarte antes. "Emergencias públicas" es un concepto elástico y sin definición clara.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Tus datos pueden ser entregados a autoridades sin tu conocimiento
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-number">08</div>
+          <div class="issue-severity severity--high">ALTO</div>
+          <h4>Seguridad No Garantizada</h4>
+          <p>"No transmission of data over the Internet can be guaranteed to be 100% secure." — Exención total de responsabilidad. Si hay un breach, no hay protección contractual ni recourse legal.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Tus datos están "a riesgo" sin recursos legales
+          </div>
+        </div>
+
+        <div class="issue-card issue-card--critical">
+          <div class="issue-number">09</div>
+          <div class="issue-severity severity--critical">CRÍTICO</div>
+          <h4>Privacy Shield Invalidado (GDPR)</h4>
+          <p>Mencionan "Privacy Shield" (invalidado desde 2020 por el TJUE en Schrems II). No mencionan alternativas como Cláusulas Contractuales Estándar (SCCs). Ilegalidad GDPR potencial para usuarios EU/EEA.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Transferencias de datos posiblemente ilegales bajo GDPR
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-number">10</div>
+          <div class="issue-severity severity--medium">MEDIO</div>
+          <h4>Derechos GDPR Limitados en Práctica</h4>
+          <p>Listan derechos GDPR pero con comodines: "Subject to applicable law's limitations". Sin timeframe de respuesta para acceso, sin formato especificado para portabilidad.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Derechos sobre el papel, débiles en ejecución real
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-number">11</div>
+          <div class="issue-severity severity--high">ALTO</div>
+          <h4>Menores sin Protección Real</h4>
+          <p>Sin COPPA compliance clara. Permiten uso con "supervisión de padres" sin verificación. Edad mínima 16 años (GDPR) pero sin mecanismo de verificación real.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Menores pueden ser perfilados sin consentimiento parental verificable
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-number">12</div>
+          <div class="issue-severity severity--high">ALTO</div>
+          <h4>Cambios Unilaterales de Política</h4>
+          <p>No mencionan cómo notificarán cambios. Pueden modificar usos de datos sin aprobación. "Continuación de uso = consentimiento" es un patrón abusivo estándar.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            La política actual puede cambiar sin tu voto ni notificación clara
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-number">13</div>
+          <div class="issue-severity severity--medium">MEDIO</div>
+          <h4>Contacto de Privacidad Deficiente</h4>
+          <p>Solo email: privacy@abacus.ai. EU Representative en Grecia (tiempo incierto). Sin teléfono, chat, ni DPO listado. "Allow a reasonable amount of time" = indefinido.</p>
+          <div class="issue-impact">
+            <span class="impact-icon">⚡</span>
+            Difícil hacer valer tus derechos en la práctica
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Privacy Comparison Table -->
+      <div class="card" style="margin-top: 2rem;">
+        <div class="card-header">
+          <h3>Protecciones: Abacus.AI vs. Estándar</h3>
+        </div>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Protección</th>
+                <th>Abacus.AI</th>
+                <th>Estándar</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Límite de retención específico</td>
+                <td class="status-fail">"commercially reasonable"</td>
+                <td class="status-ok">30-90 días</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>Modelo de consentimiento</td>
+                <td class="status-fail">Opt-out implícito</td>
+                <td class="status-ok">Opt-in explícito</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>Cifrado end-to-end</td>
+                <td class="status-fail">Mencionado, no garantizado</td>
+                <td class="status-ok">Garantizado</td>
+                <td><span class="badge badge--warning">DUDOSO</span></td>
+              </tr>
+              <tr>
+                <td>Auditoría externa independiente</td>
+                <td class="status-fail">No mencionada</td>
+                <td class="status-ok">SOC 2 Type II</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>DPO (Data Protection Officer)</td>
+                <td class="status-fail">No listado</td>
+                <td class="status-ok">Contacto directo</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+              <tr>
+                <td>Breach notification</td>
+                <td class="status-fail">No especificado</td>
+                <td class="status-ok">&lt; 72 horas</td>
+                <td><span class="badge badge--danger">FALTA</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RECOMMENDATIONS TAB ===================== -->
+    <section class="tab-panel" id="tab-recommendations">
+      <div class="section-header">
+        <h2>Recomendaciones</h2>
+        <p>Plan de acción basado en los hallazgos de seguridad y privacidad</p>
+      </div>
+
+      <div class="rec-grid">
+
+        <div class="rec-card">
+          <div class="rec-header">
+            <div class="rec-icon">🔍</div>
+            <h3>Antes de Usar Abacus.AI</h3>
+            <span class="rec-tag rec-tag--urgent">Inmediato</span>
+          </div>
+          <ul class="rec-list">
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Penetration testing:</strong> Solicita frecuencia exacta y alcance del último test
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>SOC 2 Type II:</strong> Pide fecha y scope del último reporte auditado
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>RPO/RTO:</strong> Exige documentación escrita de objetivos de recuperación
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>DPO SLA:</strong> Solicita tiempo de respuesta garantizado contractualmente
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-header">
+            <div class="rec-icon">📝</div>
+            <h3>Negocia Términos Adicionales</h3>
+            <span class="rec-tag rec-tag--important">Importante</span>
+          </div>
+          <ul class="rec-list">
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Aislamiento físico</strong> de datos (si es cuenta enterprise)
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Customer-supplied keys</strong> si manejas datos críticos
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Cláusula de breach &lt;72h</strong> de notificación garantizada
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Límite de retención</strong> definido contractualmente (máx. 90 días)
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-header">
+            <div class="rec-icon">🛡️</div>
+            <h3>Implementa Controles Propios</h3>
+            <span class="rec-tag rec-tag--normal">En Paralelo</span>
+          </div>
+          <ul class="rec-list">
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Encriptación local</strong> de datos antes de enviarlos a la plataforma
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Enmascaramiento de PII</strong> (nombres, IDs, datos médicos/financieros)
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Auditoría independiente</strong> de acceso de empleados de Abacus
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Zero-trust:</strong> No conectes Google Workspace con archivos confidenciales
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-header">
+            <div class="rec-icon">📡</div>
+            <h3>Monitoreo Continuo</h3>
+            <span class="rec-tag rec-tag--normal">Ongoing</span>
+          </div>
+          <ul class="rec-list">
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Logs de login:</strong> Revisa accesos a tu cuenta semanalmente
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Cambios en políticas:</strong> Suscríbete a alertas de modificaciones
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Portabilidad:</strong> Solicita export de datos cada 6 meses
+              </div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>
+                <strong>Contraseña única:</strong> Nunca reutilices passwords en esta plataforma
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rec-card rec-card--gdpr">
+          <div class="rec-header">
+            <div class="rec-icon">🇪🇺</div>
+            <h3>Usuarios EU/EEA: Alerta GDPR</h3>
+            <span class="rec-tag rec-tag--urgent">Crítico</span>
+          </div>
+          <div class="gdpr-alert">
+            <p>Abacus.AI menciona "Privacy Shield" — invalidado por el TJUE en Schrems II (2020). Sin Cláusulas Contractuales Estándar (SCCs) verificables, las transferencias de tus datos a EE.UU. pueden ser <strong>ilegales bajo GDPR</strong>.</p>
+          </div>
+          <ul class="rec-list">
+            <li>
+              <span class="list-dot"></span>
+              <div>Consulta con un abogado especializado en privacidad de datos antes de usar</div>
+            </li>
+            <li>
+              <span class="list-dot"></span>
+              <div>Solicita el DPA (Data Processing Agreement) actualizado con SCCs</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rec-card rec-card--verdict">
+          <div class="verdict-header">
+            <div class="verdict-icon">⚖️</div>
+            <h3>Veredicto Final</h3>
+          </div>
+          <div class="verdict-scale">
+            <div class="verdict-item verdict-ok">
+              <div class="verdict-check">✓</div>
+              <div>
+                <strong>Adecuado para:</strong>
+                <p>Datos no sensibles, proyectos de exploración, prototipado con datos ficticios</p>
+              </div>
+            </div>
+            <div class="verdict-item verdict-danger">
+              <div class="verdict-check">✗</div>
+              <div>
+                <strong>Riesgoso para:</strong>
+                <p>Información personal, datos financieros, registros médicos, información profesional crítica, datos de ciudadanos EU/EEA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">Mente Tecno</span>
+        <span class="footer-divider">·</span>
+        <span>Análisis basado en políticas de Abacus.AI consultadas en junio 2026</span>
+      </div>
+      <div class="footer-disclaimer">
+        Para decisiones legales vinculantes, consulta a un abogado especializado en privacidad de datos.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
